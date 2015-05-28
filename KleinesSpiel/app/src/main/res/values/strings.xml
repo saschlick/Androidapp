@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Kleines Spiel</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Button_Info_Text">Klick mich oft</string>
+    <string name="creator">Sascha Moser</string>
+</resources>
