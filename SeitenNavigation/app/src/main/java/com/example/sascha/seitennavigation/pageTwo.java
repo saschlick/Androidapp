@@ -1,9 +1,11 @@
 package com.example.sascha.seitennavigation;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class pageTwo extends ActionBarActivity {
@@ -12,6 +14,13 @@ public class pageTwo extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_two);
+
+        Intent intent = getIntent();
+        if (intent!= null){
+            String inhalt = intent.getStringExtra("key");
+            TextView zahl= (TextView)findViewById(R.id.zahl);
+            zahl.setText(inhalt);
+        }
     }
 
     @Override
