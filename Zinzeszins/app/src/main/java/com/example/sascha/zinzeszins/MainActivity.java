@@ -1,6 +1,8 @@
 package com.example.sascha.zinzeszins;
 
 import android.app.AlertDialog;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -39,6 +41,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
