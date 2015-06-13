@@ -35,9 +35,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         berechnen=(Button)findViewById(R.id.button);
         berechnen.setOnClickListener(this);
 
-        kapital = (EditText) findViewById(R.id.editText3);
-        laufzeit = (EditText) findViewById(R.id.editText);
-        zinssatz = (EditText) findViewById(R.id.editText2);
+        kapital = (EditText) findViewById(R.id.kapital);
+        laufzeit = (EditText) findViewById(R.id.laufzeit);
+        zinssatz = (EditText) findViewById(R.id.zinssatz);
 
 
     }
