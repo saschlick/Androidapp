@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Zinzeszins</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="berechnen">Berechnen</string>
+    <string name="kapital">Kapital</string>
+    <string name="dauer">Laufzeit</string>
+    <string name="zinssatz">Zinssatz</string>
+</resources>
