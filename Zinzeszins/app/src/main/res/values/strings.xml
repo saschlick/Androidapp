@@ -7,4 +7,5 @@
     <string name="kapital">Kapital</string>
     <string name="dauer">Laufzeit</string>
     <string name="zinssatz">Zinssatz</string>
+    <string name="waehrung">€</string>
 </resources>

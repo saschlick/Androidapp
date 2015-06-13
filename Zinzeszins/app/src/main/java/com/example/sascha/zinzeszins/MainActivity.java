@@ -1,17 +1,43 @@
 package com.example.sascha.zinzeszins;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.AlertDialog;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+
+    Button berechnen;
+    public EditText kapital;
+    public EditText laufzeit;
+    public EditText zinssatz;
+    double kapitalwert=0;
+    double laufzeitwert=0;
+    double zinssatzwert=0;
+    double ergebnis=0;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        berechnen=(Button)findViewById(R.id.button);
+        berechnen.setOnClickListener(this);
+
+        kapital = (EditText) findViewById(R.id.editText3);
+        laufzeit = (EditText) findViewById(R.id.editText);
+        zinssatz = (EditText) findViewById(R.id.editText2);
+
+
     }
 
     @Override
@@ -34,5 +60,24 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+
+        if (v==berechnen){
+            AlertDialog alert= new AlertDialog.Builder(this).create();
+            zinssatzwert = Double.parseDouble(zinssatz.getText().toString());
+            laufzeitwert = Double.parseDouble(laufzeit.getText().toString());
+            kapitalwert = Double.parseDouble(kapital.getText().toString());
+
+            ergebnis=kapitalwert * (Math.pow((1+zinssatzwert/100),laufzeitwert ));
+            ergebnis = Math.round(100.0 * ergebnis) / 100.0;
+            alert.setMessage("Ihr Endkapital sind " +ergebnis + " Euro");
+            alert.show();
+        }
+
+
     }
 }
