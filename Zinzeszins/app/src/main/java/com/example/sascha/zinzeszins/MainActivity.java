@@ -15,6 +15,7 @@ import android.widget.EditText;
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
 
     Button berechnen;
+    Button chart;
     public EditText kapital;
     public EditText laufzeit;
     public EditText zinssatz;
@@ -34,6 +35,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         berechnen=(Button)findViewById(R.id.button);
         berechnen.setOnClickListener(this);
+
+        chart=(Button)findViewById(R.id.button2);
+        chart.setOnClickListener(this);
 
         kapital = (EditText) findViewById(R.id.kapital);
         laufzeit = (EditText) findViewById(R.id.laufzeit);
