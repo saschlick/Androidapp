@@ -71,6 +71,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        //TODO : Umabauen auf 2 getrennte EventHandler
+        //TODO : Zahlen von Eingabe auf neue Seite übergeben
+        //TODO : Einlesen der Werte in neue Funktion gliedern
 
 
         if (v==berechnen){
@@ -84,7 +87,5 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             alert.setMessage("Ihr Endkapital sind " +ergebnis + " Euro");
             alert.show();
         }
-
-
     }
 }
