@@ -79,8 +79,8 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void onClickBerechnung(View view) {
-        //TODO : Chart Anzeige verschönern
-        //TODO : Zahlen von Eingabe auf neue Seite übergeben
+        //TODO : Chart Anzeige verschoenern
+        //TODO : Zahlen von Eingabe auf neue Seite uebergeben
         //TODO : Einlesen der Werte in neue Funktion gliedern
             AlertDialog alert= new AlertDialog.Builder(this).create();
             zinssatzwert = Double.parseDouble(zinssatz.getText().toString());
