@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:text="@string/berechnen"
         android:id="@+id/button"
+        android:onClick="onClickBerechnung"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
@@ -80,6 +81,7 @@
         android:layout_height="wrap_content"
         android:text="@string/chart"
         android:id="@+id/button2"
+        android:onClick="onClickChart"
         android:layout_above="@+id/button"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="51dp" />

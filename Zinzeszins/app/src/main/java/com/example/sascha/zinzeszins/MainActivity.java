@@ -69,14 +69,14 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View v) {
+    public void onClickChart(View view){
+
+    }
+
+    public void onClickBerechnung(View view) {
         //TODO : Umabauen auf 2 getrennte EventHandler
         //TODO : Zahlen von Eingabe auf neue Seite übergeben
         //TODO : Einlesen der Werte in neue Funktion gliedern
-
-
-        if (v==berechnen){
             AlertDialog alert= new AlertDialog.Builder(this).create();
             zinssatzwert = Double.parseDouble(zinssatz.getText().toString());
             laufzeitwert = Double.parseDouble(laufzeit.getText().toString());
@@ -87,5 +87,4 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             alert.setMessage("Ihr Endkapital sind " +ergebnis + " Euro");
             alert.show();
         }
-    }
 }
