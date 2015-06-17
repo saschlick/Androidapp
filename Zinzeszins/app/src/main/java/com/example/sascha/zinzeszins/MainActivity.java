@@ -1,6 +1,7 @@
 package com.example.sascha.zinzeszins;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+public class MainActivity extends ActionBarActivity {
 
     Button berechnen;
     Button chart;
@@ -34,10 +35,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         berechnen=(Button)findViewById(R.id.button);
-        berechnen.setOnClickListener(this);
+
 
         chart=(Button)findViewById(R.id.button2);
-        chart.setOnClickListener(this);
+
 
         kapital = (EditText) findViewById(R.id.kapital);
         laufzeit = (EditText) findViewById(R.id.laufzeit);
@@ -70,11 +71,15 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
     public void onClickChart(View view){
+        Graph line = new Graph();
+        Intent lineIntent = line.getIntent(this);
+        startActivity(lineIntent);
+
 
     }
 
     public void onClickBerechnung(View view) {
-        //TODO : Umabauen auf 2 getrennte EventHandler
+        //TODO : Chart Anzeige verschönern
         //TODO : Zahlen von Eingabe auf neue Seite übergeben
         //TODO : Einlesen der Werte in neue Funktion gliedern
             AlertDialog alert= new AlertDialog.Builder(this).create();
