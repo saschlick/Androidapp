@@ -2,6 +2,9 @@ package com.example.sascha.zinzeszins;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.provider.SyncStateContract;
+import android.util.DisplayMetrics;
 
 import org.achartengine.ChartFactory;
 import org.achartengine.chart.PointStyle;
@@ -18,9 +21,14 @@ import java.sql.Time;
 public class Graph {
 
 
+
     public Intent getIntent(Context context) {
-        int[] x ={1,2,3,4,5,6,7,8,9,10};
-        int[] y ={10,15,25,45,50,60,75,90,105,110};
+        int[] x ={0,2,3,4,5,6,7,8,9,10};
+        int[] y ={0,15,25,45,50,60,75,90,105,110};
+        final int TEXT_SIZE_XHDPI = 24;
+        final int TEXT_SIZE_HDPI = 20;
+        final int TEXT_SIZE_MDPI = 18;
+        final int TEXT_SIZE_LDPI = 13;
 
         TimeSeries series= new TimeSeries("Kapital");
         for (int i=0;i<x.length;i++){
@@ -30,6 +38,10 @@ public class Graph {
         dataset.addSeries(series);
 
         XYSeriesRenderer renderer = new XYSeriesRenderer();
+        XYSeriesRenderer.FillOutsideLine fill = new XYSeriesRenderer.FillOutsideLine(XYSeriesRenderer.FillOutsideLine.Type.BOUNDS_ALL);
+        fill.setColor(Color.GRAY);
+        renderer.addFillOutsideLine(fill);
+
         renderer.setPointStyle(PointStyle.CIRCLE);
         renderer.setPointStrokeWidth((float) 6.5);
         renderer.setShowLegendItem(false);
@@ -39,8 +51,21 @@ public class Graph {
 
         XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
         mRenderer.addSeriesRenderer(renderer);
+        mRenderer.setPanEnabled(false, false);
+        mRenderer.setZoomEnabled(false, false);
+        mRenderer.setXTitle("Jahre");
+        mRenderer.setChartTitle("Kapitalentwicklung");
+        mRenderer.setChartTitleTextSize(50);
+        mRenderer.setApplyBackgroundColor(true);
+        mRenderer.setBackgroundColor(Color.BLACK);
+        mRenderer.setLabelsTextSize(20);
+        mRenderer.setAxisTitleTextSize(25);
+        mRenderer.setXAxisMax(10);
+        mRenderer.setXAxisMin(0);
 
-        Intent intent= ChartFactory.getLineChartIntent(context,dataset,mRenderer,"Kapital");
+
+
+        Intent intent = ChartFactory.getLineChartIntent(context,dataset,mRenderer,"Kapital");
         return intent;
 
     }
