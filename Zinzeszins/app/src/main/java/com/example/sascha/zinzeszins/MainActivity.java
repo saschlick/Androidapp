@@ -79,10 +79,11 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void onClickBerechnung(View view) {
+        AlertDialog alert= new AlertDialog.Builder(this).create();
         //TODO : Chart Anzeige verschoenern
         //TODO : Zahlen von Eingabe auf neue Seite uebergeben
         //TODO : Einlesen der Werte in neue Funktion gliedern
-            AlertDialog alert= new AlertDialog.Builder(this).create();
+        try {
             zinssatzwert = Double.parseDouble(zinssatz.getText().toString());
             laufzeitwert = Double.parseDouble(laufzeit.getText().toString());
             kapitalwert = Double.parseDouble(kapital.getText().toString());
@@ -91,5 +92,11 @@ public class MainActivity extends ActionBarActivity {
             ergebnis = Math.round(100.0 * ergebnis) / 100.0;
             alert.setMessage("Ihr Endkapital sind " +ergebnis + " Euro");
             alert.show();
+
+        } catch (RuntimeException e) {
+            alert.setMessage(getString(R.string.Errornachricht));
+            alert.show();
+        }
+
         }
 }

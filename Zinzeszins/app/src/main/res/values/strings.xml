@@ -9,5 +9,7 @@
     <string name="dauer">Laufzeit:</string>
     <string name="zinssatz">Zinssatz:</string>
     <string name="waehrung">€</string>
+    <string name="title_activity_main_activity2">MainActivity2Activity</string>
+    <string name="Errornachricht">"Bitte geben Sie ihre Werte ein "</string>
 
 </resources>
