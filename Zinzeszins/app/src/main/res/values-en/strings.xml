@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zinzeszins-Calculator</string>
+    <string name="berechnen">Calc</string>
+    <string name="chart">Show Chart</string>
+    <string name="zeit">"Years"</string>
+    <string name="Errornachricht">"Please, enter your Values"</string>
+    <string name="Waehrung">"Dollar</string>
+    <string name="dauer">Term:</string>
+</resources>

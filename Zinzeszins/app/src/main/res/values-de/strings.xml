@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zinzeszins-Rechner</string>
+    <string name="Waehrung">"Euro"</string>
+    <string name="Errornachricht">"Bitte geben Sie ihre Werte ein "</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="berechnen">Berechnen</string>
+    <string name="chart">Chart anzeigen</string>
+    <string name="dauer">Laufzeit</string>
+    <string name="zeit">"Jahre"</string>
+    <string name="zinssatz">Zinssatz:</string>
+    <string name="waehrung">€</string>
+    <string name="ErgebnisTeilEins">"Ihr Endkapital beträgt "</string>
+</resources>

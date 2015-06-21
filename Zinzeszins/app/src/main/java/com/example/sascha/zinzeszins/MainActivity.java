@@ -71,10 +71,15 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void onClickChart(View view){
-        Graph line = new Graph();
-        Intent lineIntent = line.getIntent(this);
-        startActivity(lineIntent);
+        try {
 
+            Graph line = new Graph();
+            Intent lineIntent = line.getIntent(this);
+            startActivity(lineIntent);
+        }
+        catch (RuntimeException e){
+
+        }
 
     }
 
