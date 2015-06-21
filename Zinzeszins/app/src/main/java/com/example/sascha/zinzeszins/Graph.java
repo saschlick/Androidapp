@@ -25,10 +25,6 @@ public class Graph {
     public Intent getIntent(Context context) {
         int[] x ={0,2,3,4,5,6,7,8,9,10};
         int[] y ={0,15,25,45,50,60,75,90,105,110};
-        final int TEXT_SIZE_XHDPI = 24;
-        final int TEXT_SIZE_HDPI = 20;
-        final int TEXT_SIZE_MDPI = 18;
-        final int TEXT_SIZE_LDPI = 13;
 
         TimeSeries series= new TimeSeries("Kapital");
         for (int i=0;i<x.length;i++){
@@ -53,7 +49,7 @@ public class Graph {
         mRenderer.addSeriesRenderer(renderer);
         mRenderer.setPanEnabled(false, false);
         mRenderer.setZoomEnabled(false, false);
-        mRenderer.setXTitle("Jahre");
+        mRenderer.setXTitle(context.getString(R.string.zeit));
         mRenderer.setChartTitle("Kapitalentwicklung");
         mRenderer.setChartTitleTextSize(50);
         mRenderer.setApplyBackgroundColor(true);

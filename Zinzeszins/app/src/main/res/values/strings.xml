@@ -13,5 +13,6 @@
     <string name="Errornachricht">"Bitte geben Sie ihre Werte ein "</string>
     <string name="ErgebnisTeilEins">"Ihr Endkapital beträgt "</string>
     <string name="Waehrung">" Euro"</string>
+    <string name="zeit">"Jahre"</string>
 
 </resources>

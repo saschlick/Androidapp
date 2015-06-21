@@ -82,12 +82,7 @@ public class MainActivity extends ActionBarActivity {
         AlertDialog alert= new AlertDialog.Builder(this).create();
 
         try {
-            zinssatzwert = Double.parseDouble(zinssatz.getText().toString());
-            laufzeitwert = Double.parseDouble(laufzeit.getText().toString());
-            kapitalwert = Double.parseDouble(kapital.getText().toString());
-
-            ergebnis=kapitalwert * (Math.pow((1+zinssatzwert/100),laufzeitwert ));
-            ergebnis = Math.round(100.0 * ergebnis) / 100.0;
+            ergebnis= rechnen();
             alert.setMessage(getString(R.string.ErgebnisTeilEins) +ergebnis + getString(R.string.Waehrung));
             alert.show();
 
@@ -95,6 +90,15 @@ public class MainActivity extends ActionBarActivity {
             alert.setMessage(getString(R.string.Errornachricht));
             alert.show();
         }
+    }
 
-        }
+   private double rechnen()
+   {
+       zinssatzwert = Double.parseDouble(zinssatz.getText().toString());
+       laufzeitwert = Double.parseDouble(laufzeit.getText().toString());
+       kapitalwert = Double.parseDouble(kapital.getText().toString());
+       ergebnis=kapitalwert * (Math.pow((1+zinssatzwert/100),laufzeitwert ));
+       ergebnis = Math.round(100.0 * ergebnis) / 100.0;
+       return ergebnis;
+   }
 }
