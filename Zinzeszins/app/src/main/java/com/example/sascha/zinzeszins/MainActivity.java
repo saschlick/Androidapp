@@ -12,7 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-
+//TODO : Chart Anzeige verschoenern
+//TODO : Zahlen von Eingabe auf neue Seite uebergeben
+//TODO : Einlesen der Werte in neue Funktion gliedern
 public class MainActivity extends ActionBarActivity {
 
     Button berechnen;
@@ -35,8 +37,6 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         berechnen=(Button)findViewById(R.id.button);
-
-
         chart=(Button)findViewById(R.id.button2);
 
 
@@ -80,9 +80,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void onClickBerechnung(View view) {
         AlertDialog alert= new AlertDialog.Builder(this).create();
-        //TODO : Chart Anzeige verschoenern
-        //TODO : Zahlen von Eingabe auf neue Seite uebergeben
-        //TODO : Einlesen der Werte in neue Funktion gliedern
+
         try {
             zinssatzwert = Double.parseDouble(zinssatz.getText().toString());
             laufzeitwert = Double.parseDouble(laufzeit.getText().toString());
@@ -90,7 +88,7 @@ public class MainActivity extends ActionBarActivity {
 
             ergebnis=kapitalwert * (Math.pow((1+zinssatzwert/100),laufzeitwert ));
             ergebnis = Math.round(100.0 * ergebnis) / 100.0;
-            alert.setMessage("Ihr Endkapital sind " +ergebnis + " Euro");
+            alert.setMessage(getString(R.string.ErgebnisTeilEins) +ergebnis + getString(R.string.Waehrung));
             alert.show();
 
         } catch (RuntimeException e) {
